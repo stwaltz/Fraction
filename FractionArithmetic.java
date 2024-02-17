@@ -14,20 +14,34 @@ public class FractionArithmetic {
                 kbd.nextLine();
                 switch (c) {
                     case 1 -> {
-                        System.out.println("Enter the numerator for Fraction1: ");
+                        System.out.println("Enter the numerator for Fraction 1: ");
                         int num1 = intInput(kbd);
                         fr1.setNumerator(num1);
-                        System.out.println("Enter the denominator for Fraction 1");
-                        int den1 = intInput(kbd);
-                        fr1.setDenominator(den1);
+                        while (true) {
+                            System.out.println("Enter the denominator for Fraction 1:");
+                            int den1 = intInput(kbd);
+                            if (den1 == 0) {
+                                System.out.println("Enter a non-zero denominator.");
+                            } else {
+                                fr1.setDenominator(den1);
+                                break;
+                            }
+                        }
                     }
                     case 2 -> {
                         System.out.println("Enter the numerator for Fraction 2: ");
                         int num2 = intInput(kbd);
                         fr2.setNumerator(num2);
-                        System.out.println("Enter the denominator for Fraction 2");
-                        int den2 = intInput(kbd);
-                        fr2.setDenominator(den2);
+                        while (true) {
+                            System.out.println("Enter the denominator for Fraction 2:");
+                            int den2 = intInput(kbd);
+                            if (den2 == 0) {
+                                System.out.println("Enter a non-zero denominator.");
+                            } else {
+                                fr1.setDenominator(den2);
+                                break;
+                            }
+                        }
                     }
                     case 3 -> // add
                         // placeholder
