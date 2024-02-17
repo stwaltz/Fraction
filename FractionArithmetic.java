@@ -39,10 +39,8 @@ public class FractionArithmetic {
                         // placeholder
                             System.out.println("Result: m");
                     case 6 -> { // div
-                        /*String result = fr1.divideBy(fr2.getNumerator(), fr2.getDenominator());
-                        System.out.println("Result : " + result);
-                        double dResult = fr1.toDouble() / fr2.toDouble();
-                        System.out.println("Result: " + dResult);*/
+                        System.out.println(fr1.divideBy(fr2).toString());
+                        System.out.println(fr1.divideBy(fr2).toDouble());
                     }
                     case 7 -> // reduction
                         // placeholder
