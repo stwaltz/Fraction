@@ -1,6 +1,31 @@
+package FractionsP2;
 public class Fraction {
 
-    //Returns the product fraction of this fraction and a multiplier fraction.
+    private int numerator;
+    private int denominator;
+    public Fraction(){ // no cons
+     int numerator = 0;
+     int denominator = 1;
+    }
+    public Fraction(int numerator, int denominator){
+        setNumerator(numerator);
+        setDenominator(denominator);
+    }
+    public void setNumerator(int num) {
+        numerator = num;
+    }
+    public int getNumerator() {
+        return numerator;
+    }
+    public void setDenominator(int den) {
+        denominator = den;
+    }
+    public int getDenominator() {
+        return denominator;
+    }
+  // add other 
+  
+  //Returns the product fraction of this fraction and a multiplier fraction.
     public Fraction multiplyBy(Fraction multiplier) {
         return new Fraction(
                 this.numerator * multiplier.getNumerator(),
@@ -14,3 +39,6 @@ public class Fraction {
         return String.format("%d/%d",this.numerator,this.denominator);
     }
 }
+
+
+
