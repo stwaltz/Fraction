@@ -54,14 +54,27 @@ public class Fraction {
     
     /*
     - Reduces fraction to the lowest term
-    - *NOTE* Remove parameters if the fraction being reduced is itself. 
      */
+    
     public String reduce(int numerator, int denominator){ 
         int GCD = computeGCD(numerator, denominator);
         if(numerator % denominator == 0){ //For proper fractions
             return String.format("%d", numerator/denominator);
         }else{ //For improper fractions
             return String.format("%d/%d",numerator/GCD, denominator/GCD);
+        }
+    }
+
+    /*
+    - Method overload if fraction is reducing itself
+    */
+
+    public String reduce(){
+        int GCD = computeGCD(this.numerator, this.denominator);
+        if(this.numerator % this.denominator == 0){ //For proper fractions
+            return String.format("%d", this.numerator/this.denominator);
+        }else{ //For improper fractions
+            return String.format("%d/%d",this.numerator/GCD, this.denominator/GCD);
         }
     }
 }
