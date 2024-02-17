@@ -32,13 +32,24 @@ public class Fraction {
                 this.denominator * multiplier.getNumerator()
         );
     }
+    public Fraction divideBy(Fraction divisor){
+        return new Fraction(
+                this.numerator * divisor.getDenominator(),
+                this.denominator * divisor.getNumerator()
+        );
+    }
 
     //Returns a string representation of this fraction
     //Format of string representation is "[numerator]/[denominator]"
     public String toString(){
         return String.format("%d/%d",this.numerator,this.denominator);
     }
+
+    public double toDouble(){
+        return (double) this.numerator / this.denominator;
+    }
 }
+
 
 
 
