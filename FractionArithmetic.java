@@ -1,5 +1,7 @@
 package FractionsP2;
+
 import java.util.Scanner;
+
 public class FractionArithmetic {
     public static void main(String[] args) {
         Scanner kbd = new Scanner(System.in);
@@ -9,6 +11,7 @@ public class FractionArithmetic {
         while (true) { // loop for input
             Greeting();
             System.out.print("Enter your choice: ");
+
             if (kbd.hasNextInt()) {
                 c = kbd.nextInt();
                 kbd.nextLine();
@@ -38,29 +41,34 @@ public class FractionArithmetic {
                             if (den2 == 0) {
                                 System.out.println("Enter a non-zero denominator.");
                             } else {
-                                fr1.setDenominator(den2);
+                                fr2.setDenominator(den2);
                                 break;
                             }
                         }
                     }
-                    case 3 -> // add
-                        // placeholder
-                            System.out.println("Result: ");
+                    case 3 -> {
+                        //add
+                        System.out.println("Result: ");
+                    }
                     case 4 -> // sub
                         // placeholder
+
                             System.out.println("Result: s");
-                    case 5 -> // multiply
-                        // placeholder
-                            System.out.println("Result: m");
-                    case 6 -> { // div
-                        /*String result = fr1.divideBy(fr2.getNumerator(), fr2.getDenominator());
-                        System.out.println("Result : " + result);
-                        double dResult = fr1.toDouble() / fr2.toDouble();
-                        System.out.println("Result: " + dResult);*/
+                    case 5 -> {
+                        Fraction result = fr1.multiplyBy(fr2);
+                        System.out.println("Result: " + result.toString());
                     }
-                    case 7 -> // reduction
-                        // placeholder
-                            System.out.println("Result");
+                    case 7 -> {
+                        //1
+                        Fraction reducedFraction1 = fr1.reduce();
+                        System.out.println("Reduced Fraction 1: " + reducedFraction1.toString());
+                        //2
+                        Fraction reducedFraction2 = fr2.reduce();
+                        System.out.println("Reduced Fraction 2: " + reducedFraction2.toString());
+                    }
+                    case 6 -> {
+                     // div
+                    }
                     case 8 -> {
                         System.out.println("Program Terminated");
                         System.exit(0);
@@ -70,8 +78,11 @@ public class FractionArithmetic {
             } else {
                 System.out.println("Please enter a valid integer.");
                 kbd.nextLine();// eat invalid
+
             }
+
         }
+
     }
     public static void Greeting(){
         System.out.println("___________________________________");
@@ -94,4 +105,6 @@ public class FractionArithmetic {
         }
         return kbd.nextInt();
     }
+
     }
+
