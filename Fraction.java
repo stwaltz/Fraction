@@ -4,8 +4,8 @@ public class Fraction {
     private int numerator;
     private int denominator;
     public Fraction(){ // no cons
-     int numerator = 0;
-     int denominator = 1;
+        this.numerator = 0;
+        this.denominator = 1;
     }
     public Fraction(int numerator, int denominator){
         setNumerator(numerator);
@@ -23,13 +23,13 @@ public class Fraction {
     public int getDenominator() {
         return denominator;
     }
-  // add other 
-  
-  //Returns the product fraction of this fraction and a multiplier fraction.
+    // add other
+
+    //Returns the product fraction of this fraction and a multiplier fraction.
     public Fraction multiplyBy(Fraction multiplier) {
         return new Fraction(
                 this.numerator * multiplier.getNumerator(),
-                this.denominator * multiplier.getNumerator()
+                this.denominator * multiplier.getDenominator()
         );
     }
 
@@ -38,7 +38,7 @@ public class Fraction {
     public String toString(){
         return String.format("%d/%d",this.numerator,this.denominator);
     }
-    
+
     /*
     - Calculate the GCD/GCF of two numbers
     */
@@ -87,5 +87,4 @@ public class Fraction {
     }
 
 }
-
 
