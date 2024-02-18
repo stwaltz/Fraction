@@ -38,46 +38,53 @@ public class Fraction {
     public String toString(){
         return String.format("%d/%d",this.numerator,this.denominator);
     }
-
-        /*
+    
+    /*
     - Calculate the GCD/GCF of two numbers
     */
     public int computeGCD(int FirstNumber, int SecondNumber){
         int remainder;
-        do{
-            remainder = FirstNumber % SecondNumber;
-            FirstNumber = SecondNumber;
-            SecondNumber = remainder;
-        }while(remainder != 0);
-        return FirstNumber;
-    }
-    
-    /*
-    - Reduces fraction to the lowest term
-     */
-    
-    public String reduce(int numerator, int denominator){ 
-        int GCD = computeGCD(numerator, denominator);
-        if(numerator % denominator == 0){ //For proper fractions
-            return String.format("%d", numerator/denominator);
-        }else{ //For improper fractions
-            return String.format("%d/%d",numerator/GCD, denominator/GCD);
+        try{
+            do{
+                remainder = FirstNumber % SecondNumber;
+                FirstNumber = SecondNumber;
+                SecondNumber = remainder;
+            }while(remainder != 0);
+        }catch (Exception e){
+            System.out.println("Unable to calculate GCD, denominator must not be zero");
         }
+        return FirstNumber;
     }
 
     /*
-    - Method overload if fraction is reducing itself
-    */
+    - Reduces fraction to the lowest term
+    - *NOTE* Remove parameters if the fraction being reduced is itself.
+     */
+    public String reduce(int numerator, int denominator){
+        int GCD = computeGCD(numerator, denominator);
+        try{
+            if(numerator % denominator == 0){ //For proper fractions
+                return String.format("%d", numerator/denominator);
+            }else{ //For improper fractions
+                return String.format("%d/%d",numerator/GCD, denominator/GCD);
+            }
+        }catch(Exception e){
+            return "";
+        }
+    }
 
     public String reduce(){
         int GCD = computeGCD(this.numerator, this.denominator);
-        if(this.numerator % this.denominator == 0){ //For proper fractions
-            return String.format("%d", this.numerator/this.denominator);
-        }else{ //For improper fractions
-            return String.format("%d/%d",this.numerator/GCD, this.denominator/GCD);
+        try{
+            if(this.numerator % this.denominator == 0){ //For proper fractions
+                return String.format("%d", this.numerator/this.denominator);
+            }else{ //For improper fractions
+                return String.format("%d/%d",this.numerator/GCD, this.denominator/GCD);
+            }
+        }catch (Exception e){
+            return "";
         }
     }
-}
 
 
 
