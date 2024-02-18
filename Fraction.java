@@ -51,7 +51,7 @@ public class Fraction {
                 SecondNumber = remainder;
             }while(remainder != 0);
         }catch (Exception e){
-            System.out.println("Unable to calculate GCD, denominator must not be zero");
+            System.out.println("Unable to calculate GCD, denominator must not be zero!");
         }
         return FirstNumber;
     }
@@ -60,31 +60,32 @@ public class Fraction {
     - Reduces fraction to the lowest term
     - *NOTE* Remove parameters if the fraction being reduced is itself.
      */
-    public String reduce(int numerator, int denominator){
+    public Fraction reduce(int numerator, int denominator){
         int GCD = computeGCD(numerator, denominator);
         try{
             if(numerator % denominator == 0){ //For proper fractions
-                return String.format("%d", numerator/denominator);
+                return new Fraction(numerator/GCD, denominator/GCD);
             }else{ //For improper fractions
-                return String.format("%d/%d",numerator/GCD, denominator/GCD);
+                return new Fraction(numerator/GCD, denominator/GCD);
             }
         }catch(Exception e){
-            return "";
+            return new Fraction(0, 1);
         }
     }
 
-    public String reduce(){
+    public Fraction reduce(){
         int GCD = computeGCD(this.numerator, this.denominator);
         try{
             if(this.numerator % this.denominator == 0){ //For proper fractions
-                return String.format("%d", this.numerator/this.denominator);
+                return new Fraction(this.numerator / this.denominator, 1);
             }else{ //For improper fractions
-                return String.format("%d/%d",this.numerator/GCD, this.denominator/GCD);
+                return new Fraction(this.numerator/GCD, this.denominator/GCD);
             }
         }catch (Exception e){
-            return "";
+            return new Fraction(0, 1);
         }
     }
+
 }
 
 
