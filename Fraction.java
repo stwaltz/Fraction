@@ -38,7 +38,54 @@ public class Fraction {
     public String toString(){
         return String.format("%d/%d",this.numerator,this.denominator);
     }
-}
+    
+    /*
+    - Calculate the GCD/GCF of two numbers
+    */
+    public int computeGCD(int FirstNumber, int SecondNumber){
+        int remainder;
+        try{
+            do{
+                remainder = FirstNumber % SecondNumber;
+                FirstNumber = SecondNumber;
+                SecondNumber = remainder;
+            }while(remainder != 0);
+        }catch (Exception e){
+            System.out.println("Unable to calculate GCD, denominator must not be zero!");
+        }
+        return FirstNumber;
+    }
 
+    /*
+    - Reduces fraction to the lowest term
+    - *NOTE* Remove parameters if the fraction being reduced is itself.
+     */
+    public Fraction reduce(int numerator, int denominator){
+        int GCD = computeGCD(numerator, denominator);
+        try{
+            if(numerator % denominator == 0){ //For proper fractions
+                return new Fraction(numerator/GCD, denominator/GCD);
+            }else{ //For improper fractions
+                return new Fraction(numerator/GCD, denominator/GCD);
+            }
+        }catch(Exception e){
+            return new Fraction(0, 1);
+        }
+    }
+
+    public Fraction reduce(){
+        int GCD = computeGCD(this.numerator, this.denominator);
+        try{
+            if(this.numerator % this.denominator == 0){ //For proper fractions
+                return new Fraction(this.numerator / this.denominator, 1);
+            }else{ //For improper fractions
+                return new Fraction(this.numerator/GCD, this.denominator/GCD);
+            }
+        }catch (Exception e){
+            return new Fraction(0, 1);
+        }
+    }
+
+}
 
 
