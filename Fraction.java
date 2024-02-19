@@ -40,6 +40,12 @@ public class Fraction {
                 this.denominator * multiplier.getDenominator()
         );
     }
+    public Fraction divideBy(Fraction divisor){
+        return new Fraction(
+                this.numerator * divisor.getDenominator(),
+                this.denominator * divisor.getNumerator()
+        );
+    }
 
     //Returns a string representation of this fraction
     //Format of string representation is "[numerator]/[denominator]"
@@ -102,18 +108,13 @@ public class Fraction {
         }
     }
 
-    public Fraction reduce(){
-        int GCD = computeGCD(this.numerator, this.denominator);
-        try{
-            if(this.numerator % this.denominator == 0){ //For proper fractions
-                return new Fraction(this.numerator / this.denominator, 1);
-            }else{ //For improper fractions
-                return new Fraction(this.numerator/GCD, this.denominator/GCD);
-            }
-        }catch (Exception e){
-            return new Fraction(0, 1);
-        }
-    }
-
 }
+
+    public double toDouble(){
+        return (double) this.numerator / this.denominator;
+    }
+}
+
+
+
 
