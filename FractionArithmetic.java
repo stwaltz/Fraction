@@ -58,6 +58,9 @@ public class FractionArithmetic {
                         Fraction result = fr1.multiplyBy(fr2);
                         System.out.println("Result: " + result.toString());
                     }
+                    case 6 -> {
+                     // div
+                    }
                     case 7 -> {
                         //1
                         Fraction reducedFraction1 = fr1.reduce();
@@ -65,9 +68,6 @@ public class FractionArithmetic {
                         //2
                         Fraction reducedFraction2 = fr2.reduce();
                         System.out.println("Reduced Fraction 2: " + reducedFraction2.toString());
-                    }
-                    case 6 -> {
-                     // div
                     }
                     case 8 -> {
                         System.out.println("Program Terminated");
