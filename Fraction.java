@@ -11,12 +11,13 @@ public class Fraction {
     }
 
     public Fraction(int wholeNumVal){
-        
+        this.numerator = wholeNumVal;
+        this.denominator = 1;
     }
 
     public Fraction(int numerator, int denominator) {
-        setNumerator(numerator);
-        setDenominator(denominator);
+        this.numerator = numerator;
+        this.denominator = denominator;
     }
 
     public void setNumerator(int num) {
@@ -34,7 +35,6 @@ public class Fraction {
     public int getDenominator() {
         return denominator;
     }
-    // add other
 
     //Return sum of fraction of this fraction and additive fraction
     public Fraction addition(Fraction additive) {
@@ -44,7 +44,7 @@ public class Fraction {
         );
     }
 
-    //non-simplified
+    //Subtract a fraction to another and return the difference.
     public Fraction subtract(Fraction other) {
         // Checks if denominators are the same
         if (this.denominator == other.denominator) {
@@ -71,19 +71,17 @@ public class Fraction {
                 this.denominator * multiplier.getDenominator()
         );
     }
-    //HENRI: COMMENT
      
-    //Returns the quotient fraction and
-
+    //Returns the quotient fraction between two fractions
     public Fraction divideBy(Fraction divisor) {
         return new Fraction(
                 this.numerator * divisor.getDenominator(),
                 this.denominator * divisor.getNumerator()
         );
     }
+
     //Returns a string representation of this fraction
     //Format of string representation is "[numerator]/[denominator]"
-
     public String toString() {
         return String.format("%d/%d", this.numerator, this.denominator);
     }
