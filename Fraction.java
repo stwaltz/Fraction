@@ -9,6 +9,10 @@ public class Fraction {
         this.numerator = 0;
         this.denominator = 1;
     }
+    
+    public Fraction(int wholeNumVal){
+        
+    }
 
     public Fraction(int numerator, int denominator) {
         setNumerator(numerator);
