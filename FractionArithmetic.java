@@ -7,7 +7,7 @@ public class FractionArithmetic {
         Scanner kbd = new Scanner(System.in);
         Fraction fr1 = new Fraction(); // fraction 1
         Fraction fr2 = new Fraction(); // fraction 2
-        int c ; // for case
+        int c; // for case
         while (true) { // loop for input
             Greeting();
             System.out.print("Enter your choice: ");
@@ -58,6 +58,11 @@ public class FractionArithmetic {
                         Fraction result = fr1.multiplyBy(fr2);
                         System.out.println("Result: " + result.toString());
                     }
+                    case 6 -> { // divide
+                        Fraction result = fr1.divideBy(fr2);
+                        System.out.println("Result: " + result.toString());
+                        System.out.printf("Result: " + "%.2f\n", result.toDouble());
+                    }
                     case 7 -> { //reduce
                         //1
                         Fraction reducedFraction1 = fr1.reduce();
@@ -65,10 +70,6 @@ public class FractionArithmetic {
                         //2
                         Fraction reducedFraction2 = fr2.reduce();
                         System.out.println("Reduced Fraction 2: " + reducedFraction2.toString());
-                    }
-                    case 6 -> { // divide
-                        Fraction result = fr1.divideBy(fr2);
-                        System.out.println("Result: " + result.toString());
                     }
                     case 8 -> {
                         System.out.println("Program Terminated");
@@ -85,7 +86,8 @@ public class FractionArithmetic {
         }
 
     }
-    public static void Greeting(){
+
+    public static void Greeting() {
         System.out.println("___________________________________");
         System.out.println("|Fraction Calculator              |");
         System.out.println("|       What do you want to do?   |");
@@ -99,6 +101,7 @@ public class FractionArithmetic {
         System.out.println("|8. Exit                          |");
         System.out.println("___________________________________");
     }
+
     public static int intInput(Scanner kbd) {
         while (!kbd.hasNextInt()) {
             System.out.println("Invalid input. Please enter a valid integer.");
@@ -107,5 +110,5 @@ public class FractionArithmetic {
         return kbd.nextInt();
     }
 
-    }
+}
 
