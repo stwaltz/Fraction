@@ -13,6 +13,9 @@ public class FractionArithmetic {
             while (choice == 'Y') { // loop for input
 
                 Greeting();
+                System.out.printf("Fraction 1 is: %s%n",fr1.toString());
+                System.out.printf("Fraction 2 is: %s%n",fr2.toString());
+
                 System.out.print("Enter your choice: ");
 
                 if (kbd.hasNextInt()) {
@@ -51,23 +54,22 @@ public class FractionArithmetic {
                         }
                         case 3 -> { //add
                             Fraction result = fr1.addition(fr2);
-                            System.out.println("Result: " + result.toString());
+                            System.out.printf("Result: %s or %f%n",result.toString(),result.toDouble());
                             choice = askLoop(kbd, choice);
                         }
                         case 4 -> { // sub
                             Fraction result = fr1.subtract(fr2);
-                            System.out.println("Result: " + result.toString());
+                            System.out.printf("Result: %s or %f%n",result.toString(),result.toDouble());
                             choice = askLoop(kbd, choice);
                         }
                         case 5 -> { //multiply
                             Fraction result = fr1.multiplyBy(fr2);
-                            System.out.println("Result: " + result.toString());
+                            System.out.printf("Result: %s or %f%n",result.toString(),result.toDouble());
                             choice = askLoop(kbd, choice);
                         }
                         case 6 -> { // divide
                             Fraction result = fr1.divideBy(fr2);
-                            System.out.println("Result: " + result.toString());
-                            System.out.printf("Result: " + "%.2f\n", result.toDouble());
+                            System.out.printf("Result: %s or %f%n",result.toString(),result.toDouble());
                             choice = askLoop(kbd, choice);
                         }
                         case 7 -> { //reduce
@@ -87,7 +89,6 @@ public class FractionArithmetic {
                 } else {
                     System.out.println("Please enter a valid integer.");
                     kbd.nextLine();// eat invalid
-
                 }
             }
             System.out.println("Program Terminated");
@@ -120,8 +121,12 @@ public class FractionArithmetic {
 
     public static char askLoop(Scanner kbd, char userChoice){
         do{
-            System.out.print("Would you like to run the program again? [Y/N]: ");
-            userChoice = kbd.nextLine().toUpperCase().charAt(0);
+            System.out.print("Would you like to run the program again? [Y/N Default: Y]: ");
+            try {
+                userChoice = kbd.nextLine().toUpperCase().charAt(0);
+            } catch (Exception e){
+                userChoice = 'Y';
+            }
         }while(userChoice != 'Y' && userChoice != 'N');
         return userChoice;
 
