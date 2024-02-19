@@ -16,7 +16,7 @@ public class FractionArithmetic {
                 c = kbd.nextInt();
                 kbd.nextLine();
                 switch (c) {
-                    case 1 -> {
+                    case 1 -> { //input num1
                         System.out.println("Enter the numerator for Fraction 1: ");
                         int num1 = intInput(kbd);
                         fr1.setNumerator(num1);
@@ -31,7 +31,7 @@ public class FractionArithmetic {
                             }
                         }
                     }
-                    case 2 -> {
+                    case 2 -> { //input num2
                         System.out.println("Enter the numerator for Fraction 2: ");
                         int num2 = intInput(kbd);
                         fr2.setNumerator(num2);
@@ -46,28 +46,29 @@ public class FractionArithmetic {
                             }
                         }
                     }
-                    case 3 -> {
-                        //add
-                        System.out.println("Result: ");
+                    case 3 -> { //add
+                        Fraction result = fr1.addition(fr2);
+                        System.out.println("Result: " + result.toString());
                     }
-                    case 4 -> // sub
-                        // placeholder
-
-                            System.out.println("Result: s");
-                    case 5 -> {
+                    case 4 -> { // sub
+                        Fraction result = fr1.subtract(fr2);
+                        System.out.println("Result: " + result.toString());
+                    }
+                    case 5 -> { //multiply
                         Fraction result = fr1.multiplyBy(fr2);
                         System.out.println("Result: " + result.toString());
                     }
-                    case 6 -> {
-                     // div
-                    }
-                    case 7 -> {
+                    case 7 -> { //reduce
                         //1
                         Fraction reducedFraction1 = fr1.reduce();
                         System.out.println("Reduced Fraction 1: " + reducedFraction1.toString());
                         //2
                         Fraction reducedFraction2 = fr2.reduce();
                         System.out.println("Reduced Fraction 2: " + reducedFraction2.toString());
+                    }
+                    case 6 -> { // divide
+                        Fraction result = fr1.divideBy(fr2);
+                        System.out.println("Result: " + result.toString());
                     }
                     case 8 -> {
                         System.out.println("Program Terminated");
