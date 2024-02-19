@@ -9,6 +9,13 @@ public class Fraction {
         this.numerator = 0;
         this.denominator = 1;
     }
+<<<<<<< HEAD
+=======
+    
+    public Fraction(int wholeNumVal){
+        
+    }
+>>>>>>> 807ba10b4c8dd0ea6190f44a5f81c517c0792c8c
 
     public Fraction(int numerator, int denominator) {
         setNumerator(numerator);
@@ -69,6 +76,10 @@ public class Fraction {
     }
     //HENRI: COMMENT
 
+<<<<<<< HEAD
+=======
+    //Returns the quotient fraction and
+>>>>>>> 807ba10b4c8dd0ea6190f44a5f81c517c0792c8c
     public Fraction divideBy(Fraction divisor) {
         return new Fraction(
                 this.numerator * divisor.getDenominator(),
