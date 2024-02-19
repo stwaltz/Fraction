@@ -25,6 +25,14 @@ public class Fraction {
     }
     // add other
 
+        //Return sum of fraction of this fraction and additive fraction
+    public Fraction addition(Fraction additive){
+        return new Fraction(
+                this.numerator * additive.getDenominator() + this.denominator * additive.getNumerator(),
+                this.denominator * additive.getDenominator()
+        );
+    }
+
     //Returns the product fraction of this fraction and a multiplier fraction.
     public Fraction multiplyBy(Fraction multiplier) {
         return new Fraction(
