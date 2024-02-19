@@ -1,16 +1,19 @@
-package FractionsP2;
+package prog2.prelimgroup;
 public class Fraction {
 
     private int numerator;
     private int denominator;
+
     public Fraction(){ // no cons
         this.numerator = 0;
         this.denominator = 1;
     }
+
     public Fraction(int numerator, int denominator){
         setNumerator(numerator);
         setDenominator(denominator);
     }
+
     public void setNumerator(int num) {
         numerator = num;
     }
@@ -67,7 +70,7 @@ public class Fraction {
             int newNumerator1 = this.numerator * other.denominator;
             int newNumerator2 = other.numerator * this.denominator;
             int commonDenominator = this.denominator * other.denominator;
-            int newNum = newNum1 - newNum2;
+            int newNumerator = newNumerator1 - newNumerator2;
 
             
             return new Fraction(newNumerator, commonDenominator);
@@ -95,26 +98,22 @@ public class Fraction {
     - Reduces fraction to the lowest term
     - *NOTE* Remove parameters if the fraction being reduced is itself.
      */
-    public Fraction reduce(int numerator, int denominator){
-        int GCD = computeGCD(numerator, denominator);
+    public Fraction reduce(){
+        int GCD = computeGCD(this.numerator, this.denominator);
         try{
-            if(numerator % denominator == 0){ //For proper fractions
-                return new Fraction(numerator/GCD, denominator/GCD);
+            if(this.numerator % this.denominator == 0){ //For proper fractions
+                return new Fraction(this.numerator/GCD, this.denominator/GCD);
             }else{ //For improper fractions
-                return new Fraction(numerator/GCD, denominator/GCD);
+                return new Fraction(this.numerator/GCD, this.denominator/GCD);
             }
         }catch(Exception e){
             return new Fraction(0, 1);
         }
     }
-
-}
-
     public double toDouble(){
         return (double) this.numerator / this.denominator;
     }
 }
-
 
 
 

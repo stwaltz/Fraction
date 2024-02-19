@@ -1,4 +1,4 @@
-package FractionsP2;
+package prog2.prelimgroup;
 
 import java.util.Scanner;
 
