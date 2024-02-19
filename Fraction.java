@@ -39,6 +39,27 @@ public class Fraction {
         return String.format("%d/%d",this.numerator,this.denominator);
     }
 
+    //non-simplified 
+    public Fraction subtract(Fraction other) {
+        // Checks if denominators are the same
+        if (this.denominator == other.denominator) {
+            // Simply subtract numerators
+            int newNumerator = this.numerator - other.numerator;
+            return new Fraction(newNumerator, this.denominator);
+
+        }
+        else {
+            //standard cross multiplication
+            int newNumerator1 = this.numerator * other.denominator;
+            int newNumerator2 = other.numerator * this.denominator;
+            int commonDenominator = this.denominator * other.denominator;
+            int newNum = newNum1 - newNum2;
+
+            
+            return new Fraction(newNumerator, commonDenominator);
+        }
+    }
+
     /*
     - Calculate the GCD/GCF of two numbers
     */
