@@ -116,7 +116,8 @@ public class Fraction {
         }
     }
 
-    //HENRI: INSERT COMMENTS
+    //Returns a double representation of this fraction
+    //Divides the numerator by the denominator
     public double toDouble() {
         return (double) this.numerator / this.denominator;
     }
