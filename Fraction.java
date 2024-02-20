@@ -43,26 +43,15 @@ public class Fraction {
                 this.denominator * additive.getDenominator()
         );
     }
-
+    
     //Subtract a fraction to another and return the difference.
-    public Fraction subtract(Fraction other) {
-        // Checks if denominators are the same
-        if (this.denominator == other.denominator) {
-            // Simply subtract numerators
-            int newNumerator = this.numerator - other.numerator;
-            return new Fraction(newNumerator, this.denominator);
-
-        } else {
-            //standard cross multiplication
-            int newNumerator1 = this.numerator * other.denominator;
-            int newNumerator2 = other.numerator * this.denominator;
-            int commonDenominator = this.denominator * other.denominator;
-            int newNumerator = newNumerator1 - newNumerator2;
-
-
-            return new Fraction(newNumerator, commonDenominator);
-        }
+     public Fraction subtraction(Fraction subtractive){
+        return new Fraction(
+                this.numerator * subtractive.getDenominator() - this.denominator * subtractive.getNumerator(),
+                this.denominator * subtractive.getDenominator()
+        );
     }
+    
 
     //Returns the product fraction of this fraction and a multiplier fraction.
     public Fraction multiplyBy(Fraction multiplier) {
