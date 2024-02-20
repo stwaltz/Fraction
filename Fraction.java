@@ -110,10 +110,7 @@ public class Fraction {
     public Fraction reduce() {
         int GCD = computeGCD(this.numerator, this.denominator);
         try {
-            if (this.numerator % this.denominator == 0) { //For proper fractions
-                return new Fraction(this.numerator / GCD, this.denominator / GCD);
-            } else { //For improper fractions
-                return new Fraction(this.numerator / GCD, this.denominator / GCD);
+            return new Fraction(this.numerator / GCD, this.denominator / GCD);
             }
         } catch (Exception e) {
             return new Fraction(0, 1);
