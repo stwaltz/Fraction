@@ -111,7 +111,6 @@ public class Fraction {
         int GCD = computeGCD(this.numerator, this.denominator);
         try {
             return new Fraction(this.numerator / GCD, this.denominator / GCD);
-            }
         } catch (Exception e) {
             return new Fraction(0, 1);
         }
