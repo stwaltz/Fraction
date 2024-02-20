@@ -58,7 +58,7 @@ public class FractionArithmetic {
                             choice = askLoop(kbd, choice);
                         }
                         case 4 -> { // sub
-                            Fraction result = fr1.subtract(fr2);
+                            Fraction result = fr1.subtraction(fr2);
                             System.out.printf("Result: %s or %f%n",result.toString(),result.toDouble());
                             choice = askLoop(kbd, choice);
                         }
