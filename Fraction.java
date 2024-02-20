@@ -43,15 +43,15 @@ public class Fraction {
                 this.denominator * additive.getDenominator()
         );
     }
-    
+
     //Subtract a fraction to another and return the difference.
-     public Fraction subtraction(Fraction subtractive){
-        return new Fraction(
-                this.numerator * subtractive.getDenominator() - this.denominator * subtractive.getNumerator(),
-                this.denominator * subtractive.getDenominator()
-        );
-    }
-    
+     public Fraction subtraction(Fraction subtractive) {
+         return new Fraction(
+                 this.numerator * subtractive.getDenominator() - this.denominator * subtractive.getNumerator(),
+                 this.denominator * subtractive.getDenominator()
+         );
+     }
+
 
     //Returns the product fraction of this fraction and a multiplier fraction.
     public Fraction multiplyBy(Fraction multiplier) {
@@ -60,7 +60,7 @@ public class Fraction {
                 this.denominator * multiplier.getDenominator()
         );
     }
-     
+
     //Returns the quotient fraction between two fractions
     public Fraction divideBy(Fraction divisor) {
         return new Fraction(
